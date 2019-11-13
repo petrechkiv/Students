@@ -14,6 +14,13 @@ use yii\filters\VerbFilter;
  */
 class TeachersController extends Controller
 {
+    public function __construct($id, $module, $config = [])
+    {
+        parent::__construct($id, $module, $config);
+
+
+    }
+
     /**
      * {@inheritdoc}
      */

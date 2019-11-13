@@ -14,6 +14,15 @@ use yii\filters\VerbFilter;
  */
 class GroupsController extends Controller
 {
+    public function __construct($id, $module, $config = [])
+    {
+        parent::__construct($id, $module, $config);
+
+        if (Yii::$app->user->identity->role !== 'teacher') {
+            $this->redirect('/lessons/index');
+        }
+    }
+
     /**
      * {@inheritdoc}
      */
