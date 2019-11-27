@@ -13,7 +13,7 @@ use kartik\select2\Select2;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'role')->hiddenInput(['value' => 'teacher']) ?>
+    <?= $form->field($model, 'role')->hiddenInput(['value' => 'student'])->label('') ?>
 
     <?= $form->field($model, 'fio')->textInput(['maxlength' => true]) ?>
 

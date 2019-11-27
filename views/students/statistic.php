@@ -28,18 +28,22 @@ $this->params['breadcrumbs'][] = $this->title;
     </table>
 
     <h3>Предметы которые посещал студент:</h3>
-    <?php foreach ($predmets as $predmet): ?>
-        <?= Collapse::widget([
-            'items' => [
-                [
-                    'label' => $predmet['caption'],
-                    'content' => $predmet['info'],
-                    'contentOptions' => [],
-                    'options' => [],
-                ],
-            ]
-        ]);
-        ?>
-    <?php endforeach; ?>
+    <?php if (!empty($predmets)): ?>
+        <?php foreach ($predmets as $predmet): ?>
+            <?= Collapse::widget([
+                'items' => [
+                    [
+                        'label' => $predmet['caption'],
+                        'content' => $predmet['info'],
+                        'contentOptions' => [],
+                        'options' => [],
+                    ],
+                ]
+            ]);
+            ?>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>Студент не посетил ниодного занятия!</p>
+    <?php endif; ?>
 
 </div>
